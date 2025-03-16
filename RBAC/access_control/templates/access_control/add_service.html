@@ -1,0 +1,7 @@
+<!-- access_control/templates/access_control/add_service.html -->
+<h1>Add Service</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Add Service</button>
+</form>

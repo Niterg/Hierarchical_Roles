@@ -3,6 +3,27 @@
 - ``Step 1:`` To initialize Django application
     ```ps
     python -m venv venv 
+    ```
+    - Before activating script check the Execution Policy
+    ```ps1
+    Get-ExecutionPolicy
+    Restricted # If this is shown execute the command below in administrator mode
+    
+    # For the current process only
+    Set-ExecutionPolicy Unrestricted -Scope Process
+
+    # For permanently allowing scripts
+    Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine
+
+    # Now it should show unrestricted
+    Get-ExecutionPolicy
+    Unrestricted
+
+    # To list the users that has access to ExecutionPolicy
+    Get-ExecutionPolicy -List
+    ```
+    - Activate the script
+    ```ps1
     venv/Scripts/activate
     python -m django --version 
     # If django does not exits
